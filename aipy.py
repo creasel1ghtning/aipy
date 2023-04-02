@@ -4,9 +4,10 @@ import time
 openai.api_key = "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"
 
 def generate_response(prompt):
+    formatted_prompt = f"User: {prompt}\nAI:"
     response = openai.Completion.create(
         engine="curie",
-        prompt=prompt,
+        prompt=formatted_prompt,
         max_tokens=150,
         n=1,
         stop=None,
